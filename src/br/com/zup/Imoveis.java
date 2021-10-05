@@ -59,9 +59,9 @@ public class Imoveis {
     public String toString() {
         StringBuilder dados = new StringBuilder();
         dados.append("\nEndereço: " +getEndereço());
-        dados.append("\nMorador: "+getMoradores());
         dados.append("\nValor do aluguel: "+getValorDoAluguel());
-        dados.append("\nFuncionario responsavel: " +getFuncionarioResponsavel());
+        dados.append("\n------- Moradores ------ "+getMoradores());
+        dados.append("\n -------- Funcionario responsavel --------- " +getFuncionarioResponsavel());
         return dados.toString();
     }
 }

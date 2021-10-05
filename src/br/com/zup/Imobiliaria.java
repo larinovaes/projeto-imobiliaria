@@ -5,13 +5,21 @@ import java.util.List;
 
 public  class Imobiliaria {
     private List<Imoveis> imovel = new ArrayList<>();
-    private FuncionarioResponsavel funcionarioResponsavel;
 
     public Imobiliaria() {
 
     }
-    public Imoveis adicionarImovel( Imoveis novoImovel){
+
+    public Imoveis adicionarImovel(Imoveis novoImovel) {
         imovel.add(novoImovel);
         return novoImovel;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder dados = new StringBuilder();
+        dados.append("Imoveis :");
+        dados.append("\n " + imovel);
+        return dados.toString();
     }
 }
