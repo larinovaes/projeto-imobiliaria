@@ -1,9 +1,9 @@
 package br.com.zup;
 
-public class Moradores extends Pessoa {
+public class Morador extends Pessoa {
     private String emailDoMorador;
 
-    public Moradores(String nome, String cpf, int idade, String emailDoMorador) {
+    public Morador(String nome, String cpf, int idade, String emailDoMorador) {
         super(nome, cpf, idade);
         this.emailDoMorador = emailDoMorador;
     }

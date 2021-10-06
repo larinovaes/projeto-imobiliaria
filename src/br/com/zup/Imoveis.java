@@ -4,23 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Imoveis {
-    private String endereço;
+    private String endereco;
     private double valorDoAluguel;
     private FuncionarioResponsavel funcionarioResponsavel;
-    private List<Moradores> moradores = new ArrayList<>();
+    private List<Morador> moradores = new ArrayList<>();
 
-    public Imoveis(String endereço, double valorDoAluguel, FuncionarioResponsavel funcionarioResponsavel) {
-        this.endereço = endereço;
+    public Imoveis(String endereco, double valorDoAluguel, FuncionarioResponsavel funcionarioResponsavel) {
+        this.endereco = endereco;
         this.valorDoAluguel = valorDoAluguel;
         this.funcionarioResponsavel = funcionarioResponsavel;
     }
 
-    public String getEndereço() {
-        return endereço;
+    public String getEndereco() {
+        return endereco;
     }
 
-    public void setEndereço(String endereço) {
-        this.endereço = endereço;
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
     public double getValorDoAluguel() {
@@ -31,15 +31,15 @@ public class Imoveis {
         this.valorDoAluguel = valorDoAluguel;
     }
 
-    public List<Moradores> getMoradores() {
+    public List<Morador> getMoradores() {
         return moradores;
     }
 
-    public void setMoradores(List<Moradores> moradores) {
+    public void setMoradores(List<Morador> moradores) {
         this.moradores = moradores;
     }
 
-    public Moradores adicionarMorador(Moradores novoMorador) {
+    public Morador adicionarMorador(Morador novoMorador) {
         moradores.add(novoMorador);
         return novoMorador;
     }
@@ -55,7 +55,7 @@ public class Imoveis {
     @Override
     public String toString() {
         StringBuilder dados = new StringBuilder();
-        dados.append("\nEndereço: " + getEndereço());
+        dados.append("\nEndereço: " + getEndereco());
         dados.append("\nValor do aluguel: " + getValorDoAluguel());
         dados.append("\n------- Moradores ------ " + getMoradores());
         dados.append("\n -------- Funcionario responsavel --------- " + getFuncionarioResponsavel());
