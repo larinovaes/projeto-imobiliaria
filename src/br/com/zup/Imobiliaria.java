@@ -4,18 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Imobiliaria {
-    private List<Imoveis> imovel = new ArrayList<>();
+    private List<Imovel> imoveis = new ArrayList<>();
 
     public Imobiliaria() {
 
     }
 
-    public List<Imoveis> getImovel() {
-        return imovel;
+    public List<Imovel> getImoveis() {
+        return imoveis;
     }
 
-    public Imoveis adicionarImovel(Imoveis novoImovel) {
-        imovel.add(novoImovel);
+    public Imovel adicionarImovel(Imovel novoImovel) {
+        imoveis.add(novoImovel);
         return novoImovel;
     }
 
@@ -23,7 +23,7 @@ public class Imobiliaria {
     public String toString() {
         StringBuilder dados = new StringBuilder();
         dados.append("Imoveis :");
-        dados.append("\n " + imovel);
+        dados.append("\n " + imoveis);
         return dados.toString();
     }
 }

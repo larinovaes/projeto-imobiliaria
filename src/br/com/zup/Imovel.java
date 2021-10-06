@@ -3,13 +3,13 @@ package br.com.zup;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Imoveis {
+public class Imovel {
     private String endereco;
     private double valorDoAluguel;
     private FuncionarioResponsavel funcionarioResponsavel;
     private List<Morador> moradores = new ArrayList<>();
 
-    public Imoveis(String endereco, double valorDoAluguel, FuncionarioResponsavel funcionarioResponsavel) {
+    public Imovel(String endereco, double valorDoAluguel, FuncionarioResponsavel funcionarioResponsavel) {
         this.endereco = endereco;
         this.valorDoAluguel = valorDoAluguel;
         this.funcionarioResponsavel = funcionarioResponsavel;

@@ -35,20 +35,16 @@ public class Sistema {
         return morador;
     }
 
-    private static void validarCPF(Morador moradores) {
-
-    }
-
-    private static Imoveis criarImovel() {
+    private static Imovel criarImovel() {
         String endereco = dadosUsarios("Digite o endereço do imovel: ").nextLine();
         double valorDoAluguel = dadosUsarios("Digite o valor do aluguel: ").nextDouble();
-        Imoveis imoveis = new Imoveis(endereco, valorDoAluguel, adicionarResponsavel());
+        Imovel imoveis = new Imovel(endereco, valorDoAluguel, adicionarResponsavel());
         return imoveis;
     }
 
     private static String removerMoradorPorCpf(Imobiliaria imobiliaria) {
         String cpf = dadosUsarios("Digite o CPF do morador a ser removido: ").nextLine();
-        for (Imoveis percorrerImoveis : imobiliaria.getImovel()) {
+        for (Imovel percorrerImoveis : imobiliaria.getImoveis()) {
             for (Morador percorrerMoradores : percorrerImoveis.getMoradores()) {
                 if (percorrerMoradores.getCpf().equals(cpf)) {
                     percorrerImoveis.getMoradores().remove(percorrerMoradores);
@@ -69,19 +65,26 @@ public class Sistema {
             menu();
             int opcao = dadosUsarios("Qual sua escolha?").nextInt();
             if (opcao == 1) {
-                Imoveis imoveis = criarImovel();
+                Imovel imoveis = criarImovel();
                 int qtdDeMoradores = dadosUsarios("Quantos moradores quer cadastrar no imóvel?").nextInt();
                 for (int i = 0; i < qtdDeMoradores; i++) {
                     System.out.println("Morador: ");
                     Morador morador = adicionarMorador();
-                    String cpf = morador.getCpf();
-                    for (Morador pecorrendoMoradores : imoveis.getMoradores()) {
-                        if (pecorrendoMoradores.getCpf().equals(cpf)) {
-                            System.out.println("Esse morador já existe!");
+                    boolean moradorExistente = false;
+
+                    for (Imovel imovel : imobiliaria.getImoveis()) {
+                        for (Morador morador1 : imovel.getMoradores()) {
+                            if (morador1.getCpf().equals(morador.getCpf())) {
+                                moradorExistente = true;
+                            }
                         }
-                        imoveis.adicionarMorador(morador);
                     }
-                    imobiliaria.adicionarImovel(imoveis);
+                    if (!moradorExistente) {
+                        imoveis.adicionarMorador(morador);
+                        imobiliaria.adicionarImovel(imoveis);
+                    } else {
+                        System.out.println("Morador já existente nao foi incluido");
+                    }
                 }
             }
             else if (opcao == 2) {
