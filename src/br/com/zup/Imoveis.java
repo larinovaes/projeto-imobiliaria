@@ -9,7 +9,7 @@ public class Imoveis {
     private FuncionarioResponsavel funcionarioResponsavel;
     private List<Moradores> moradores = new ArrayList<>();
 
-    public Imoveis(String endereço, double valorDoAluguel,FuncionarioResponsavel funcionarioResponsavel) {
+    public Imoveis(String endereço, double valorDoAluguel, FuncionarioResponsavel funcionarioResponsavel) {
         this.endereço = endereço;
         this.valorDoAluguel = valorDoAluguel;
         this.funcionarioResponsavel = funcionarioResponsavel;
@@ -38,13 +38,10 @@ public class Imoveis {
     public void setMoradores(List<Moradores> moradores) {
         this.moradores = moradores;
     }
-    public Moradores adicionarMorador(Moradores novoMorador){
+
+    public Moradores adicionarMorador(Moradores novoMorador) {
         moradores.add(novoMorador);
         return novoMorador;
-    }
-    public Moradores removerMorador(Moradores removerMorador){
-        moradores.remove(removerMorador);
-        return removerMorador;
     }
 
     public FuncionarioResponsavel getFuncionarioResponsavel() {
@@ -58,10 +55,10 @@ public class Imoveis {
     @Override
     public String toString() {
         StringBuilder dados = new StringBuilder();
-        dados.append("\nEndereço: " +getEndereço());
-        dados.append("\nValor do aluguel: "+getValorDoAluguel());
-        dados.append("\n------- Moradores ------ "+getMoradores());
-        dados.append("\n -------- Funcionario responsavel --------- " +getFuncionarioResponsavel());
+        dados.append("\nEndereço: " + getEndereço());
+        dados.append("\nValor do aluguel: " + getValorDoAluguel());
+        dados.append("\n------- Moradores ------ " + getMoradores());
+        dados.append("\n -------- Funcionario responsavel --------- " + getFuncionarioResponsavel());
         return dados.toString();
     }
 }

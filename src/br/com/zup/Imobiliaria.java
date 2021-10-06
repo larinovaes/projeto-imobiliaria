@@ -3,11 +3,15 @@ package br.com.zup;
 import java.util.ArrayList;
 import java.util.List;
 
-public  class Imobiliaria {
+public class Imobiliaria {
     private List<Imoveis> imovel = new ArrayList<>();
 
     public Imobiliaria() {
 
+    }
+
+    public List<Imoveis> getImovel() {
+        return imovel;
     }
 
     public Imoveis adicionarImovel(Imoveis novoImovel) {

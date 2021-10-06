@@ -34,14 +34,4 @@ public abstract class Pessoa {
     public void setIdade(int idade) {
         this.idade = idade;
     }
-
-    @Override
-    public String toString() {
-       StringBuilder dados = new StringBuilder();
-       dados.append("\nNome: "+ nome);
-       dados.append("\nCPF: " +cpf);
-       dados.append("\nIdade: " + idade);
-
-       return dados.toString();
-    }
 }
