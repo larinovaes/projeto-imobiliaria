@@ -92,8 +92,8 @@ public class Sistema {
                         }
                     }
                     imoveis.adicionarMorador(morador);
+                    imobiliaria.adicionarImovel(imoveis);
                 }
-                imobiliaria.adicionarImovel(imoveis);
             }
             else if (opcao == 2) {
                 System.out.println(imobiliaria);
