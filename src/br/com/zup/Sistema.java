@@ -55,7 +55,6 @@ public class Sistema {
         return "Morador não cadastrado no sistema";
     }
 
-
     public static void executarSistem() {
 
         Imobiliaria imobiliaria = new Imobiliaria();
@@ -86,17 +85,16 @@ public class Sistema {
                         System.out.println("Morador já existente nao foi incluido");
                     }
                 }
-            }
-            else if (opcao == 2) {
-                    System.out.println(imobiliaria);
-                } else if (opcao == 3) {
-                    String statusDeRemocao = removerMoradorPorCpf(imobiliaria);
-                    System.out.println(statusDeRemocao);
-                } else {
-                    System.out.println("Voce saiu do programa");
-                    menu = false;
-                }
+            } else if (opcao == 2) {
+                System.out.println(imobiliaria);
+            } else if (opcao == 3) {
+                String statusDeRemocao = removerMoradorPorCpf(imobiliaria);
+                System.out.println(statusDeRemocao);
+            } else {
+                System.out.println("Voce saiu do programa");
+                menu = false;
             }
         }
     }
+}
 
