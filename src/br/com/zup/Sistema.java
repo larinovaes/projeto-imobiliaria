@@ -34,20 +34,8 @@ public class Sistema {
         Moradores morador = new Moradores(nomeDoMorador, cpfDeUsuarioMorador, idadeDoMorador, emailDoMorador);
         return morador;
     }
+    private static void validarCPF(Moradores moradores){
 
-    private static boolean validarCpfExistente(Imobiliaria imobiliaria, Moradores morador) {
-        // Percorrer minha lista de imóveis
-        String cpf = morador.getCpf();
-        for (Imoveis percorrerImoveis : imobiliaria.getImovel()) {
-            // Percorrer todas as listas dos moradores
-            for (Moradores percorrerMoradores : percorrerImoveis.getMoradores()) {
-                if (percorrerMoradores.getCpf().equals(cpf)) {
-                    // Este morador possui um CPF já cadastrado
-                    return true;
-                }
-            }
-        }
-        return false;
     }
 
     private static Imoveis criarImovel() {
@@ -85,15 +73,9 @@ public class Sistema {
                 for (int i = 0; i < qtdDeMoradores; i++) {
                     System.out.println("Morador: ");
                     Moradores morador = adicionarMorador();
-                    for (Moradores pecorrendoMoradores : imoveis.getMoradores()) {
-                        String cpf = morador.getCpf();
-                        if (pecorrendoMoradores.getCpf().equals(cpf)) {
-                            System.out.println("Esse morador já existe!");
-                        }
-                    }
                     imoveis.adicionarMorador(morador);
-                    imobiliaria.adicionarImovel(imoveis);
                 }
+                imobiliaria.adicionarImovel(imoveis);
             }
             else if (opcao == 2) {
                 System.out.println(imobiliaria);
