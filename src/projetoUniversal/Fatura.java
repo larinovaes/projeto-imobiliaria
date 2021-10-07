@@ -34,12 +34,14 @@ public class Fatura {
     public void setDataDeVencimento(String dataDeVencimento) {
         this.dataDeVencimento = dataDeVencimento;
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         StringBuilder dados = new StringBuilder();
-        dados.append("Consumidor: " +consumidor);
-        dados.append("Valor R$:" +valor);
-        dados.append("Data de vencimento: " +dataDeVencimento);
+        dados.append("------- FATURA --------");
+        dados.append("\nConsumidor: " + consumidor);
+        dados.append("\nValor R$:" + valor);
+        dados.append("\nData de vencimento: " + dataDeVencimento);
         return dados.toString();
     }
 }

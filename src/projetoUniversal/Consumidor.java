@@ -1,8 +1,8 @@
 package projetoUniversal;
 
 public class Consumidor {
-   private String nome;
-   private String email;
+    private String nome;
+    private String email;
 
     public Consumidor(String nome, String email) {
         this.nome = nome;
@@ -27,9 +27,9 @@ public class Consumidor {
 
     @Override
     public String toString() {
-       StringBuilder dados = new StringBuilder();
-       dados.append("\nNome: " +nome);
-       dados.append("\nEmail: " +email);
-       return dados.toString();
+        StringBuilder dados = new StringBuilder();
+        dados.append("\nNome: " + nome);
+        dados.append("\nEmail: " + email);
+        return dados.toString();
     }
 }
